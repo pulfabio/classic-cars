@@ -3,21 +3,24 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { CarsModule } from "./cars/cars.module";
+import { CarsService } from "./cars.service";
 
-import { AppComponent } from './app.component';
+import { CarsComponent } from './cars.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    CarsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    CarsModule
+    HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    CarsService
+  ],
+  exports: [
+    CarsComponent
+  ]
 })
-export class AppModule { }
+export class CarsModule { }
